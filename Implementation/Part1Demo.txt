@@ -1,0 +1,10 @@
+Script started on Fri 31 Mar 2017 10:29:46 PM EDT
+root@js-156-92:/class/assignment/Submitted# as part1.s -o part1.o
+root@js-156-92:/class/assignment/Submitted# ld part1.o -o part1
+root@js-156-92:/class/assignment/Submitted# ./part1
+# 
+# 
+# 
+# exit
+root@js-156-92:/class/assignment/Submitted# exit
+Script done on Fri 31 Mar 2017 10:30:40 PM EDT

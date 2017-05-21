@@ -1,0 +1,11 @@
+'mprotect' protects(sets permissions) the memory pages in within the interval of the parameters provided to it.
+If any of the permission that is set is violated then it generates a SIGSEGV signal for the process.
+
+
+1. In the first way, the code was compiled with the 'mprotect' and it worked fine because 
+the 'PROC_EXEC' permission was set. 
+
+2. In the second way, the code was compiled without 'mprotect' thus no 'PROC_EXEC' was
+not set and when the code tried to execute the memory region it failed as the permission was violated.
+
+ 

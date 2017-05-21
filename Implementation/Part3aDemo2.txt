@@ -1,0 +1,15 @@
+Script started on Fri 31 Mar 2017 10:55:24 PM EDT
+root@js-156-92:/class/assignment/Submitted# exit./Part3agcc Part3a.c -o Part3aexit[Kgdb part2 [3P./part2ls part2.o -o part2[12P./part2gdb part2 [6Pexitgcc Part3a.c -o Part3a
+Part3a.c: In function ‘main’:
+Part3a.c:41:3: warning: passing argument 1 of ‘posix_memalign’ from incompatible pointer type [enabled by default]
+   posix_memalign(&buf, pagesize, strlen(shellcode)+10);
+   ^
+In file included from Part3a.c:3:0:
+/usr/include/stdlib.h:503:12: note: expected ‘void **’ but argument is of type ‘char **’
+ extern int posix_memalign (void **__memptr, size_t __alignment, size_t __size)
+            ^
+root@js-156-92:/class/assignment/Submitted# ./Part3a
+Segmentation fault (core dumped)
+root@js-156-92:/class/assignment/Submitted# 
+root@js-156-92:/class/assignment/Submitted# exit
+Script done on Fri 31 Mar 2017 10:55:53 PM EDT

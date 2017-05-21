@@ -1,0 +1,7 @@
+1. When the code is compiled with no compile time option it fails because by default gcc has stack protection on and it doesn't the program execute the stack.
+
+2. When the stack protection is turned off, here the stack protection is disable but yet it is not executable hence it gives a segementation fault.
+
+3. When the stack executable is on and the stack proctection is on. In this case even though the stack is executable but the stack protection is enabled thus it will not let the program code launch the shell.
+
+4. When it is executed with stack protection off and stack executable is also on. In this case all the defense is off as the stack is executable and is not protected. Hence, the program will lauch the shell successfully.
